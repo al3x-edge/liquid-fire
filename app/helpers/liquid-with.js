@@ -4,7 +4,8 @@ export default {
   isHTMLBars: true,
   helperFunction: function liquidWithHelperFunc(params, hash, options, env) {
     var innerHash = {};
-    var View = this.container.lookupFactory('view:liquid-with');
+    var _view = env.data.view;
+    var View = _view.container.lookupFactory('view:liquid-with');
     var innerOptions = {
       hashTypes: {},
       morph: options.morph

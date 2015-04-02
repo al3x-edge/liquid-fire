@@ -1,7 +1,8 @@
 export default {
   isHTMLBars: true,
   helperFunction: function liquidBindHelper(params, hash, options, env) {
-    var componentLookup = this.container.lookup('component-lookup:main');
+    var _view = env.data.view;
+    var componentLookup = _view.container.lookup('component-lookup:main');
     var cls = componentLookup.lookupFactory('liquid-bind-c');
     hash.value = params[0];
     if (hash['class']) {

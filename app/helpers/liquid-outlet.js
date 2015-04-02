@@ -10,7 +10,8 @@ export default {
       options.paramTypes = ['string'];
     }
 
-    var View = this.container.lookupFactory('view:liquid-outlet');
+    var _view = env.data.view;
+    var View = _view.container.lookupFactory('view:liquid-outlet');
     if (hash.containerless) {
       View = View.extend(Ember._Metamorph);
     }
